@@ -1,11 +1,11 @@
-Package: commentr
+Package: comr
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Easy Comments for R and LaTeX
+Version: 0.0.2
+Author: DvP17
+Maintainer: <dvp17@protonmail.ch>
+Description: Print comments for R and LaTeX easily.
+License: GPL-3
 Encoding: UTF-8
-LazyData: true
+LazyData: TRUE
+RoxygenNote: 6.1.1
