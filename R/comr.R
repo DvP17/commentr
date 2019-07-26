@@ -38,7 +38,6 @@ comr <- function(arg1, arg2){
 
 
 
-
 #' Centered Comments for R
 #'
 #' Gives centered comments. Always capitalized.
