@@ -62,7 +62,7 @@ comr1 <- function(arg1){
   arg1 <- toupper(arg1)
   title <- sub("\\s+$", "", gsub('(.{1})', '\\1 ', arg1))
   end <- paste(c(rep("#",75), "|", "\n", rep("#", fill1), rep(" ", 3),
-                 title, rep(" ", 3), rep("#", fill2), "|", "\n",
+                 title, rep(" ", 3), rep("#", fill2), "", "\n",
                  rep("#", 75), "|"), collapse = "")
 
   # Write to Clipboard
