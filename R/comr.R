@@ -17,7 +17,7 @@ comr <- function(arg1, arg2){
   if (!missing(arg2)){
     arg1 <- toupper(arg1)
   }
-  end <- paste(c(rep("#",76), "\n", rep("#",2)," ", arg1," ",
+  end <- paste(c(rep("#", 75), "|", "\n", rep("#",2)," ", arg1," ",
                  rep("#",filler)),collapse = "")
 
   # Write to Clipboard
