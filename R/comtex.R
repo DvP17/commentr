@@ -11,7 +11,7 @@
 #' @export
 comtex <- function(arg1){
   title <- nchar(arg1) + nchar(arg1) - 1 + 6
-  filler <- 142 - title
+  filler <- 112 - title
   if((filler %% 2) == 0) {
     fill1 <- filler / 2
     fill2 <- filler / 2
@@ -21,8 +21,8 @@ comtex <- function(arg1){
   }
   arg1 <- toupper(arg1)
   title <- sub("\\s+$", "", gsub('(.{1})', '\\1 ', arg1))
-  end <- paste(c(rep("%", 142), "\n", rep("%", fill1), rep(" ", 3), title,
-                 rep(" ", 3), rep("%", fill2), "\n", rep("%", 142)),
+  end <- paste(c(rep("%", 112), "\n", rep("%", fill1), rep(" ", 3), title,
+                 rep(" ", 3), rep("%", fill2), "\n", rep("%", 112)),
                collapse = "")
 
   # Write to Clipboard
