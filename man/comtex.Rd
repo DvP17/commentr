@@ -4,10 +4,12 @@
 \alias{comtex}
 \title{Centered Comments for LaTeX}
 \usage{
-comr(arg1 = "Headline 1")
+comr(mode = "Headline 1")
 }
 \arguments{
-\item{arg1}{String for title}
+\item{string}{String for title}
+
+\item{mode}{Formatting}
 }
 \description{
 Gives centered comments for LaTeX. Always capitalized.

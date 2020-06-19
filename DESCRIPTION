@@ -8,4 +8,4 @@ Description: Print comments for R and LaTeX easily.
 License: GPL-3
 Encoding: UTF-8
 LazyData: TRUE
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0

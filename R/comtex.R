@@ -32,7 +32,6 @@ comtex <- function(string, mode = 1){
   # Capitalize
   string <- toupper(string)
 
-
   # Entire String
   if(mode == 1) {
 
