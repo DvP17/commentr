@@ -6,11 +6,12 @@
 #'
 #' @param string String for title
 #' @param mode Formatting
+#' @param charleng Number of characters for width of caption
 #'
 #' @examples comr("Headline 1")
 #'
 #' @export
-comtex <- function(string, mode = 1){
+comtex <- function(string, mode = 1, charleng = 112){
 
   # Calculate Title Length
   if(mode == 1) {
@@ -20,7 +21,7 @@ comtex <- function(string, mode = 1){
   }
 
   # Calculate Fill Number
-  filler <- 112 - title
+  filler <- charleng - title
   if((filler %% 2) == 0) {
     fill1 <- filler / 2
     fill2 <- filler / 2
@@ -38,9 +39,9 @@ comtex <- function(string, mode = 1){
     # Spaces Between Letters
     title <- sub("\\s+$", "", gsub('(.{1})', '\\1 ', string))
 
-    end <- paste(c(rep("%", 112), "\n", rep("%", fill1), rep(" ", 3), title,
-                 rep(" ", 3), rep("%", fill2), "\n", rep("%", 112)),
-               collapse = "")
+    end <- paste(c(rep("%", charleng), "\n", rep("%", fill1), rep(" ", 3), title,
+                   rep(" ", 3), rep("%", fill2), "\n", rep("%", charleng)),
+                 collapse = "")
   } else if(mode == 2) {
     end <- paste(c(rep("%", fill1), rep(" ", 3), string,
                    rep(" ", 3), rep("%", fill2)),
