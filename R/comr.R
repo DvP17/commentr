@@ -52,7 +52,7 @@ comr <- function(arg1, arg2){
 #' @export
 comr1 <- function(title, width = 80){
   tit_n <- nchar(title) + nchar(title) - 1 + 6
-  filler <- width - tit_n
+  filler <- width - 1 - tit_n
   if((filler %% 2) == 0) {
     fill1 <- filler / 2
     fill2 <- filler / 2
