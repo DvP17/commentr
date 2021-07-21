@@ -42,16 +42,17 @@ comr <- function(arg1, arg2){
 #'
 #' Gives centered comments. Always capitalized.
 #'
-#' @usage comr(arg1 = "Headline 1")
+#' @usage comr(title = "Headline 1")
 #'
-#' @param arg1 String for title
+#' @param title String for title
+#' @param width Number of characters (integer) for width of line. Default is 80.
 #'
 #' @examples comr("headline")
 #'
 #' @export
-comr1 <- function(arg1){
-  title <- nchar(arg1) + nchar(arg1) - 1 + 6
-  filler <- 75 - title
+comr1 <- function(title, width = 80){
+  tit_n <- nchar(title) + nchar(title) - 1 + 6
+  filler <- width - tit_n
   if((filler %% 2) == 0) {
     fill1 <- filler / 2
     fill2 <- filler / 2
@@ -59,11 +60,13 @@ comr1 <- function(arg1){
     fill1 <- (filler - 1) / 2
     fill2 <- (filler - 1) / 2 + 1
   }
-  arg1 <- toupper(arg1)
-  title <- sub("\\s+$", "", gsub('(.{1})', '\\1 ', arg1))
-  end <- paste(c(rep("#",75), "|", "\n", rep("#", fill1), rep(" ", 3),
+
+  # Capitalize title
+  title <- toupper(title)
+  title <- sub("\\s+$", "", gsub('(.{1})', '\\1 ', title))
+  out <- paste(c(rep("#", width), "|", "\n", rep("#", fill1), rep(" ", 3),
                  title, rep(" ", 3), rep("#", fill2), "", "\n",
-                 rep("#", 75), "|"), collapse = "")
+                 rep("#", width), "|"), collapse = "")
 
   # Write to Clipboard
   choice <- menu(c("Yes", "No"),
@@ -71,11 +74,11 @@ comr1 <- function(arg1){
 
   if (choice == 1) {
 
-    writeClipboard(end)
+    writeClipboard(out)
 
   } else {
 
-    return(cat(end))
+    return(cat(out))
 
   }
 

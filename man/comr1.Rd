@@ -4,10 +4,12 @@
 \alias{comr1}
 \title{Centered Comments for R}
 \usage{
-comr(arg1 = "Headline 1")
+comr(title = "Headline 1")
 }
 \arguments{
-\item{arg1}{String for title}
+\item{title}{String for title}
+
+\item{width}{Number of characters (integer) for width of line. Default is 80.}
 }
 \description{
 Gives centered comments. Always capitalized.
