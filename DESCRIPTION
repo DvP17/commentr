@@ -1,7 +1,7 @@
 Package: comr
 Type: Package
 Title: Easy Comments for R and LaTeX
-Version: 0.0.2
+Version: 0.0.3
 Author: DvP17
 Maintainer: <dvp17@protonmail.ch>
 Description: Print comments for R and LaTeX easily.

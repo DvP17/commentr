@@ -2,16 +2,16 @@
 #'
 #' Gives centered comments for LaTeX. Always capitalized.
 #'
-#' @usage comr(mode = "Headline 1")
+#' @usage comtex("Headline 1")
 #'
 #' @param string String for title
 #' @param mode Formatting
-#' @param charleng Number of characters for width of caption
+#' @param width Number of characters for width of caption
 #'
-#' @examples comr("Headline 1")
+#' @examples comtex("Headline 1")
 #'
 #' @export
-comtex <- function(string, mode = 1, charleng = 112){
+comtex <- function(string, mode = 1, width = 112){
 
   # Calculate Title Length
   if(mode == 1) {
@@ -21,7 +21,7 @@ comtex <- function(string, mode = 1, charleng = 112){
   }
 
   # Calculate Fill Number
-  filler <- charleng - title
+  filler <- width - title
   if((filler %% 2) == 0) {
     fill1 <- filler / 2
     fill2 <- filler / 2
@@ -39,8 +39,8 @@ comtex <- function(string, mode = 1, charleng = 112){
     # Spaces Between Letters
     title <- sub("\\s+$", "", gsub('(.{1})', '\\1 ', string))
 
-    end <- paste(c(rep("%", charleng), "\n", rep("%", fill1), rep(" ", 3), title,
-                   rep(" ", 3), rep("%", fill2), "\n", rep("%", charleng)),
+    end <- paste(c(rep("%", width), "\n", rep("%", fill1), rep(" ", 3), title,
+                   rep(" ", 3), rep("%", fill2), "\n", rep("%", width)),
                  collapse = "")
   } else if(mode == 2) {
     end <- paste(c(rep("%", fill1), rep(" ", 3), string,

@@ -1,56 +1,16 @@
-#' Comments for R
-#'
-#' Gives comments with left indentation. Without capitalization when arg2 is
-#' missing.
-#'
-#' @usage comr(arg1 = "Headline 1", arg2 = 1)
-#'
-#' @param arg1 String for title
-#' @param arg2 Every object possible
-#'
-#' @examples comr("Headline 1")
-#'
-#' @export
-comr <- function(arg1, arg2){
-  title <- nchar(arg1)
-  filler <- 76 - title - 4
-  if (!missing(arg2)){
-    arg1 <- toupper(arg1)
-  }
-  end <- paste(c(rep("#", 75), "|", "\n", rep("#",2)," ", arg1," ",
-                 rep("#",filler)),collapse = "")
-
-  # Write to Clipboard
-  choice <- menu(c("Yes", "No"),
-                 title="Do you want to copy into your clipboard?")
-
-  if (choice == 1) {
-
-    writeClipboard(end)
-
-  } else {
-
-    return(cat(end))
-
-  }
-
-} #insert someth in arg2 makes upper
-
-
-
 #' Centered Comments for R
 #'
 #' Gives centered comments. Always capitalized.
 #'
-#' @usage comr(title = "Headline 1")
+#' @usage comr_h1(title = "Headline 1")
 #'
 #' @param title String for title
 #' @param width Number of characters (integer) for width of line. Default is 80.
 #'
-#' @examples comr("headline")
+#' @examples comr_h1("headline")
 #'
 #' @export
-comr1 <- function(title, width = 80){
+comr_h1 <- function(title, width = 80){
   # Number of title characters
   tit_n <- nchar(title) + nchar(title) - 1 + 6
 
@@ -89,4 +49,47 @@ comr1 <- function(title, width = 80){
   }
 
 }
+
+
+#' Comments for R
+#'
+#' Gives comments with left indentation. Without capitalization when arg2 is
+#' missing.
+#'
+#' @usage comr_h2(arg1 = "Headline 1", arg2 = 1)
+#'
+#' @param arg1 String for title
+#' @param arg2 Every object possible
+#'
+#' @examples comr_h2("Headline 1")
+#'
+#' @export
+comr_h2 <- function(arg1, arg2){
+  title <- nchar(arg1)
+  filler <- 76 - title - 4
+  if (!missing(arg2)){
+    arg1 <- toupper(arg1)
+  }
+  end <- paste(c(rep("#", 75), "|", "\n", rep("#",2)," ", arg1," ",
+                 rep("#",filler)),collapse = "")
+
+  # Write to Clipboard
+  choice <- menu(c("Yes", "No"),
+                 title="Do you want to copy into your clipboard?")
+
+  if (choice == 1) {
+
+    writeClipboard(end)
+
+  } else {
+
+    return(cat(end))
+
+  }
+
+} #insert someth in arg2 makes upper
+
+
+
+
 

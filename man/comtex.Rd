@@ -4,19 +4,19 @@
 \alias{comtex}
 \title{Centered Comments for LaTeX}
 \usage{
-comr(mode = "Headline 1")
+comtex("Headline 1")
 }
 \arguments{
 \item{string}{String for title}
 
 \item{mode}{Formatting}
 
-\item{charleng}{Number of characters for width of caption}
+\item{width}{Number of characters for width of caption}
 }
 \description{
 Gives centered comments for LaTeX. Always capitalized.
 }
 \examples{
-comr("Headline 1")
+comtex("Headline 1")
 
 }
