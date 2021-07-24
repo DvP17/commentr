@@ -4,12 +4,16 @@
 \alias{comr_h2}
 \title{Comments for R}
 \usage{
-comr_h2(arg1 = "Headline 1", arg2 = 1)
+comr_h2(arg1 = "Headline 1", capit = FALSE)
 }
 \arguments{
-\item{arg1}{String for title}
+\item{title}{String for title.}
 
-\item{arg2}{Every object possible}
+\item{width}{Number of characters (integer) for width of line. Default is 80.}
+
+\item{align}{String for alignment of title. Default is "right". Other options are "left" and "center".}
+
+\item{capit}{If title should be in capitals. True or false.}
 }
 \description{
 Gives comments with left indentation. Without capitalization when arg2 is

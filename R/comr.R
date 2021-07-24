@@ -30,7 +30,10 @@ comr_h1 <- function(title, width = 80){
   # Capitalize title
   title <- toupper(title)
   title <- sub("\\s+$", "", gsub('(.{1})', '\\1 ', title))
-  out <- paste(c(rep("#", width), "|", "\n", rep("#", fill1), rep(" ", 3),
+
+  # Generate output
+  out <- paste(c(rep("#", width), "|", "\n",
+                 rep("#", fill1), rep(" ", 3),
                  title, rep(" ", 3), rep("#", fill2), "", "\n",
                  rep("#", width), "|"), collapse = "")
 
@@ -56,22 +59,52 @@ comr_h1 <- function(title, width = 80){
 #' Gives comments with left indentation. Without capitalization when arg2 is
 #' missing.
 #'
-#' @usage comr_h2(arg1 = "Headline 1", arg2 = 1)
+#' @usage comr_h2(arg1 = "Headline 1", capit = FALSE)
 #'
-#' @param arg1 String for title
-#' @param arg2 Every object possible
+#' @param title String for title.
+#' @param width Number of characters (integer) for width of line. Default is 80.
+#' @param align String for alignment of title. Default is "right". Other options are "left" and "center".
+#' @param capit If title should be in capitals. True or false.
 #'
 #' @examples comr_h2("Headline 1")
 #'
 #' @export
-comr_h2 <- function(arg1, arg2){
-  title <- nchar(arg1)
-  filler <- 76 - title - 4
-  if (!missing(arg2)){
-    arg1 <- toupper(arg1)
+comr_h2 <- function(title, width = 80, align = "right", capit = TRUE){
+  # Number of title characters
+  tit_n <- nchar(title)
+
+  # Width is one character less than margin
+  width <- width - 1
+
+  # Declare filler
+  filler <- width - tit_n - 2
+  if((filler %% 2) == 0) {
+    fill1 <- filler / 2
+    fill2 <- filler / 2
+  } else {
+    fill1 <- (filler - 1) / 2
+    fill2 <- (filler - 1) / 2 + 1
   }
-  end <- paste(c(rep("#", 75), "|", "\n", rep("#",2)," ", arg1," ",
-                 rep("#",filler)),collapse = "")
+
+  # Capitalize
+  if (capit){
+    title <- toupper(title)
+  }
+
+  # Generate output
+  if (align == "left") {
+    out <- paste(c(rep("#", width), "|", "\n",
+                   rep("#", 2), " ", title, " ",
+                   rep("#", filler - 2)), collapse = "")
+  } else if (align == "right") {
+    out <- paste(c(rep("#", width), "|", "\n",
+                   rep("#", filler - 4), " ", title, " ",
+                   rep("#", 4)), collapse = "")
+  } else if (align == "center") {
+    out <- paste(c(rep("#", width), "|", "\n",
+                   rep("#", fill1), " ", title, " ",
+                   rep("#", fill2)), collapse = "")
+  }
 
   # Write to Clipboard
   choice <- menu(c("Yes", "No"),
@@ -79,17 +112,14 @@ comr_h2 <- function(arg1, arg2){
 
   if (choice == 1) {
 
-    writeClipboard(end)
+    writeClipboard(out)
 
   } else {
 
-    return(cat(end))
+    return(cat(out))
 
   }
 
-} #insert someth in arg2 makes upper
-
-
-
+}
 
 
