@@ -69,7 +69,7 @@ comr_h1 <- function(title, width = 80){
 #' @examples comr_h2("Headline 1")
 #'
 #' @export
-comr_h2 <- function(title, width = 80, align = "right", capit = TRUE){
+comr_h2 <- function(title, width = 80, align = "right", capit = FALSE){
   # Number of title characters
   tit_n <- nchar(title)
 
