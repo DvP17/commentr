@@ -2,7 +2,7 @@
 % Please edit documentation in R/comr.R
 \name{comr_h1}
 \alias{comr_h1}
-\title{Centered Comments for R}
+\title{Headline 1 comment for R}
 \usage{
 comr_h1(title = "Headline 1")
 }

@@ -2,4 +2,6 @@
 
 export(comr_h1)
 export(comr_h2)
+export(comr_h3)
+export(comr_h4)
 export(comtex)
