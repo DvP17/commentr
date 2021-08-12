@@ -1,27 +1,22 @@
-#' Centered Comments for LaTeX
+#' Centered Headline 1 for LaTeX
 #'
 #' Gives centered comments for LaTeX. Always capitalized.
 #'
-#' @usage comtex("Headline 1")
+#' @usage comtex_h1("Headline 1")
 #'
-#' @param string String for title
-#' @param mode Formatting
+#' @param title String for title.
 #' @param width Number of characters for width of caption
 #'
-#' @examples comtex("Headline 1")
+#' @examples comtex_h1("Headline 1")
 #'
 #' @export
-comtex <- function(string, mode = 1, width = 112){
+comtex_h1 <- function(title, width = 112){
 
   # Calculate Title Length
-  if(mode == 1) {
-    title <- nchar(string) + nchar(string) - 1 + 6
-  } else if(mode == 2) {
-    title <- nchar(string) - 1 + 6
-  }
+  tit_n <- nchar(title) + nchar(title) - 1 + 6
 
   # Calculate Fill Number
-  filler <- width - title
+  filler <- width - tit_n
   if((filler %% 2) == 0) {
     fill1 <- filler / 2
     fill2 <- filler / 2
@@ -31,22 +26,69 @@ comtex <- function(string, mode = 1, width = 112){
   }
 
   # Capitalize
-  string <- toupper(string)
+  title <- toupper(title)
 
-  # Entire String
-  if(mode == 1) {
+  # Entire title
 
-    # Spaces Between Letters
-    title <- sub("\\s+$", "", gsub('(.{1})', '\\1 ', string))
+  # Spaces Between Letters
+  title <- sub("\\s+$", "", gsub('(.{1})', '\\1 ', title))
 
-    end <- paste(c(rep("%", width), "\n", rep("%", fill1), rep(" ", 3), title,
-                   rep(" ", 3), rep("%", fill2), "\n", rep("%", width)),
-                 collapse = "")
-  } else if(mode == 2) {
-    end <- paste(c(rep("%", fill1), rep(" ", 3), string,
-                   rep(" ", 3), rep("%", fill2)),
-                 collapse = "")
+  end <- paste(c(rep("%", width), "\n", rep("%", fill1), rep(" ", 3), title,
+                 rep(" ", 3), rep("%", fill2), "\n", rep("%", width)),
+               collapse = "")
+
+
+  # Write to Clipboard
+  choice <- menu(c("Yes", "No"), title="Do you want to copy into your clipboard?")
+
+  if (choice == 1) {
+
+    writeClipboard(end)
+
+  } else {
+
+    return(cat(end))
+
   }
+
+}
+
+
+#' Centered Headline 2 for LaTeX
+#'
+#' Gives centered comments for LaTeX. Always capitalized.
+#'
+#' @usage comtex_h2("Headline 1")
+#'
+#' @param title String for title.
+#' @param width Number of characters for width of caption
+#'
+#' @examples comtex_h2("Headline 1")
+#'
+#' @export
+comtex_h2 <- function(title, width = 112){
+
+  # Calculate Title Length
+  tit_n <- nchar(title) - 1 + 6
+
+  # Calculate Fill Number
+  filler <- width - tit_n
+  if((filler %% 2) == 0) {
+    fill1 <- filler / 2
+    fill2 <- filler / 2
+  } else {
+    fill1 <- (filler - 1) / 2
+    fill2 <- (filler - 1) / 2 + 1
+  }
+
+  # Capitalize
+  title <- toupper(title)
+
+  # Entire title
+  end <- paste(c(rep("%", fill1), rep(" ", 3),
+                 title,
+                 rep(" ", 3), rep("%", fill2)),
+               collapse = "")
 
   # Write to Clipboard
   choice <- menu(c("Yes", "No"),
@@ -63,6 +105,5 @@ comtex <- function(string, mode = 1, width = 112){
   }
 
 }
-
 
 
