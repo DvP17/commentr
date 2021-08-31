@@ -70,7 +70,7 @@ comr_h1 <- function(title, width = 80){
 #' @examples comr_h2("Headline 1")
 #'
 #' @export
-comr_h2 <- function(title, width = 80, align = "right", capit = FALSE,
+comr_h2 <- function(title, width = 80, align = "left", capit = FALSE,
                     fill = " "){
   # Number of title characters
   tit_n <- nchar(title)
@@ -144,7 +144,7 @@ comr_h2 <- function(title, width = 80, align = "right", capit = FALSE,
 #' @examples comr_h3("Headline 1")
 #'
 #' @export
-comr_h3 <- function(title, width = 80, align = "right", capit = FALSE,
+comr_h3 <- function(title, width = 80, align = "left", capit = FALSE,
                     fill = " "){
   # Number of title characters
   tit_n <- nchar(title)
@@ -217,7 +217,7 @@ comr_h3 <- function(title, width = 80, align = "right", capit = FALSE,
 #' @examples comr_h4("Headline 1")
 #'
 #' @export
-comr_h4 <- function(title, width = 80, align = "right", capit = FALSE,
+comr_h4 <- function(title, width = 80, align = "left", capit = FALSE,
                     fill = " "){
   # Number of title characters
   tit_n <- nchar(title)
