@@ -39,7 +39,7 @@ comtex_h1 <- function(title, width = 112){
 
 
   # Write to Clipboard
-  choice <- menu(c("Yes", "No"), title="Do you want to copy into your clipboard?")
+  choice <- menu(c("Yes", "No"), title="Copy output to clipboard?")
 
   if (choice == 1) {
 
@@ -92,7 +92,7 @@ comtex_h2 <- function(title, width = 112){
 
   # Write to Clipboard
   choice <- menu(c("Yes", "No"),
-                 title="Do you want to copy into your clipboard?")
+                 title="Copy output to clipboard?")
 
   if (choice == 1) {
 
