@@ -10,7 +10,7 @@
 #' @examples comr_h1("headline")
 #'
 #' @export
-comr_h1 <- function(title, width = 80){
+comr_h0 <- function(title, width = 80){
   # Number of title characters
   tit_n <- nchar(title) + nchar(title) - 1 + 6
 
@@ -34,7 +34,7 @@ comr_h1 <- function(title, width = 80){
   # Generate output
   out <- paste(c(rep("#", width), "|", "\n",
                  rep("#", fill1), rep(" ", 3),
-                 title, rep(" ", 3), rep("#", fill2), "", "\n",
+                 title, rep(" ", 3), rep("#", fill2), "|", "\n",
                  rep("#", width), "|"), collapse = "")
 
   # Write to Clipboard
@@ -70,7 +70,7 @@ comr_h1 <- function(title, width = 80){
 #' @examples comr_h2("Headline 1")
 #'
 #' @export
-comr_h2 <- function(title, width = 80, align = "left", capit = FALSE,
+comr_h1 <- function(title, width = 80, align = "left", capit = FALSE,
                     fill = " "){
   # Number of title characters
   tit_n <- nchar(title)
@@ -144,7 +144,7 @@ comr_h2 <- function(title, width = 80, align = "left", capit = FALSE,
 #' @examples comr_h3("Headline 1")
 #'
 #' @export
-comr_h3 <- function(title, width = 80, align = "left", capit = FALSE,
+comr_h2 <- function(title, width = 80, align = "left", capit = FALSE,
                     fill = " "){
   # Number of title characters
   tit_n <- nchar(title)
@@ -217,7 +217,7 @@ comr_h3 <- function(title, width = 80, align = "left", capit = FALSE,
 #' @examples comr_h4("Headline 1")
 #'
 #' @export
-comr_h4 <- function(title, width = 80, align = "left", capit = FALSE,
+comr_h3 <- function(title, width = 80, align = "left", capit = FALSE,
                     fill = " "){
   # Number of title characters
   tit_n <- nchar(title)

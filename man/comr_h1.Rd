@@ -2,19 +2,26 @@
 % Please edit documentation in R/comr.R
 \name{comr_h1}
 \alias{comr_h1}
-\title{Headline 1 comment for R}
+\title{Headline 2 comment for R}
 \usage{
-comr_h1(title = "Headline 1")
+comr_h2(arg1 = "Headline 1", capit = FALSE)
 }
 \arguments{
-\item{title}{String for title}
+\item{title}{String for title.}
 
 \item{width}{Number of characters (integer) for width of line. Default is 80.}
+
+\item{align}{String for alignment of title. Default is "right". Other options are "left" and "center".}
+
+\item{capit}{If title should be in capitals. True or false.}
+
+\item{fill}{String for type of filler. Default is " " for white space. Can be any character (e.g., "#").}
 }
 \description{
-Gives centered comments. Always capitalized.
+Gives comments with left indentation. Without capitalization when arg2 is
+missing.
 }
 \examples{
-comr_h1("headline")
+comr_h2("Headline 1")
 
 }

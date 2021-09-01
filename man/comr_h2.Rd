@@ -2,9 +2,9 @@
 % Please edit documentation in R/comr.R
 \name{comr_h2}
 \alias{comr_h2}
-\title{Headline 2 comment for R}
+\title{Headline 3 comment for R}
 \usage{
-comr_h2(arg1 = "Headline 1", capit = FALSE)
+comr_h3(arg1 = "Headline 1", capit = FALSE)
 }
 \arguments{
 \item{title}{String for title.}
@@ -22,6 +22,6 @@ Gives comments with left indentation. Without capitalization when arg2 is
 missing.
 }
 \examples{
-comr_h2("Headline 1")
+comr_h3("Headline 1")
 
 }
