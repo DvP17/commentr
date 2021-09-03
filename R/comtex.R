@@ -13,16 +13,16 @@
 comtex_h0 <- function(title, width = 112){
 
   # Calculate Title Length
-  tit_n <- nchar(title) + nchar(title) - 1 + 6
+  tit_n <- (nchar(title) * 2) + 6
 
   # Calculate Fill Number
   filler <- width - tit_n
-  if((filler %% 2) == 0) {
+  if((width %% 2) == 0) {
     fill1 <- filler / 2
-    fill2 <- filler / 2 - 1
+    fill2 <- filler / 2 + 1
   } else {
-    fill1 <- (filler - 1) / 2
-    fill2 <- (filler - 1) / 2 + 1
+    fill1 <- filler / 2 + 1
+    fill2 <- filler / 2 + 1
   }
 
   # Capitalize
@@ -69,25 +69,23 @@ comtex_h0 <- function(title, width = 112){
 comtex_h1 <- function(title, width = 112){
 
   # Calculate Title Length
-  tit_n <- nchar(title) - 1 + 6
+  tit_n <- nchar(title) + 6
 
   # Calculate Fill Number
   filler <- width - tit_n
-  if((filler %% 2) == 0) {
-    fill1 <- filler / 2
-    fill2 <- filler / 2 - 1
-  } else {
-    fill1 <- (filler - 1) / 2
-    fill2 <- (filler - 1) / 2 + 1
-  }
+
+  fill1 <- floor(filler / 2)
+  fill2 <- floor(filler / 2) + (filler %% 2)
 
   # Capitalize
   title <- toupper(title)
 
   # Entire title
-  end <- paste(c(rep("%", fill1), rep(" ", 3),
+  end <- paste(c(rep("%", fill1),
+                 rep(" ", 3),
                  title,
-                 rep(" ", 3), rep("%", fill2)),
+                 rep(" ", 3),
+                 rep("%", fill2)),
                collapse = "")
 
   # Write to Clipboard
@@ -122,17 +120,13 @@ comtex_h1 <- function(title, width = 112){
 comtex_h2 <- function(title, width = 112){
 
   # Calculate Title Length
-  tit_n <- nchar(title) - 1 + 6
+  tit_n <- nchar(title) + 6
 
   # Calculate Fill Number
   filler <- width - tit_n
-  if((filler %% 2) == 0) {
-    fill1 <- filler / 2
-    fill2 <- filler / 2 - 1
-  } else {
-    fill1 <- (filler - 1) / 2
-    fill2 <- (filler - 1) / 2 + 1
-  }
+
+  fill1 <- floor(filler / 2)
+  fill2 <- floor(filler / 2) + (filler %% 2)
 
   # Entire title
   end <- paste(c(rep("%", fill1), rep(" ", 3),
