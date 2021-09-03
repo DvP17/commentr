@@ -2,8 +2,10 @@
 % Please edit documentation in R/comtex.R
 \name{comtex_h2}
 \alias{comtex_h2}
-\title{Centered Headline 2 for LaTeX}
+\title{Centered Headline 1 for LaTeX}
 \usage{
+comtex_h1("Headline 1")
+
 comtex_h2("Headline 1")
 }
 \arguments{
@@ -13,8 +15,12 @@ comtex_h2("Headline 1")
 }
 \description{
 Gives centered comments for LaTeX. Always capitalized.
+
+Gives centered comments for LaTeX. Always capitalized.
 }
 \examples{
+comtex_h1("Headline 1")
+
 comtex_h2("Headline 1")
 
 }
