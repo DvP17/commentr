@@ -66,7 +66,7 @@ comtex_h0 <- function(title, width = 112){
 #' @examples comtex_h1("Headline 1")
 #'
 #' @export
-comtex_h2 <- function(title, width = 112){
+comtex_h1 <- function(title, width = 112){
 
   # Calculate Title Length
   tit_n <- nchar(title) - 1 + 6
